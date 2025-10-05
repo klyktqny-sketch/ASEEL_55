@@ -1,108 +1,0 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>متجر عذق</title>
-  <meta name="description" content="متجر عذق يقدم سبح فاخرة، أقلام أنيقة، خواتم أصلية، وساعات راقية مع توصيل مجاني لجميع مناطق المملكة.">
-  
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
- 
- <link rel="stylesheet" href="style.css">
-
-  <header>
-  <h1>متجر تموينات غذائية</h1>
-</header>
-  
-  <section class="countdown">
-  <h2>ينتهي العرض بعد:</h2>
-  <div id="timer"></div>
-</section>
-
-  <section class="hero">
-    <h2>عروض اليوم الوطني 95</h2>
-    <p>لفترة محدودة – اطلب الآن </p>
-  </section>
-
-<section class="products">
-  <div class="card">
-    <img src="https://media.zid.store/2ccdd455-77ad-4760-af05-8e8f437b9580/f223c286-d797-4da0-ba4c-fcf4b9969e38.jpg" alt="مياة">
-    <div class="card-content">
-      <h3>مياة صفا 200مل*48عبوة</h3>
-      <p>السعر: 25ريال</p>
-      <a href="#" target="_blank" rel="noopener noreferrer" class="btn">اطلب الآن</a>
-    </div>
-  </div>
-
-  <div class="card">
-    <img src="https://cdn.mafrservices.com/pim-content/UAE/media/product/107511/1733940603/107511_main.jpg?im=Resize=480" alt="قلم">
-    <div class="card-content">
-      <h3>أندومي شعيرية</h3>
-       <p>السعر: 0.95 هللة</p>
-      <a href="#" target="_blank" rel="noopener noreferrer" class="btn">اطلب الآن</a>
-    </div>
-  </div>
-
-  <div class="card">
-    <img src="https://cdn.salla.sa/YZVXo/b3685192-8d30-4298-a78f-e7ec19c4b4a3-1000x1000-27OKAh67UN4IMwAcwdzuiu02l8YOsjh9lJW9hiGa.png" alt="خاتم">
-    <div class="card-content">
-      <h3>شيبس دوريتوس نكهة الجبنة</h3>
-      <p>السعر:0.95هللة</p>
-      <br>ملاحظة: السعر للحبتين وليس حبة</br>
-    <a href="#" target="_blank" rel="noopener noreferrer" class="btn">اطلب الآن</a>
-    </div>
-  </div>
-
-  <div class="card">
-    <img src="https://media.zid.store/6b6e687c-c979-4f68-94ac-b8146f61d8db/f0a625e5-be0f-445a-b149-527a77f421ed.webp" alt="عصير">
-    <div class="card-content">
-      <h3>عصير الربيع(برتقال)</h3>
-      <p>السعر:0.95</p>
-     <a href="#" target="_blank" rel="noopener noreferrer" class="btn">اطلب الآن</a>
-    </div>
-  </div>
-</section>
-
-  <footer>
-    <p>جميع الحقوق محفوظة © 2025– متجر عذق</p>
-  </footer>
-<script>
-  // Set target date and time (Saudi time)
-  var targetDate = new Date("sep 22, 2025 10:00:00 GMT+0300").getTime();
- 
-  // عدل القيم هنا فقط لتحديد المدة
-  var hours = 0;    // عدد الساعات
-  var minutes = 0;  // عدد الدقائق
-  var seconds = 0; // عدد الثواني
-
-  // نحسب المدة بالمللي ثانية
-  var duration = (hours * 60 * 60 + minutes * 60 + seconds) * 1000;
-
-  // وقت الانتهاء = الآن + المدة
-  var targetDate = new Date().getTime() + duration;
-
-  var x = setInterval(function() {
-    var now = new Date().getTime();
-    var distance = targetDate - now;
-
-    var d = Math.floor(distance / (1000 * 60 * 60 * 24));
-    var h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    var s = Math.floor((distance % (1000 * 60)) / 1000);
-
-    document.getElementById("timer").innerHTML =
-      d + " يوم " + h + " ساعة " + m + " دقيقة " + s + " ثانية";
-
-    if (distance < 0) {
-      clearInterval(x);
-      document.getElementById("timer").innerHTML = "انتهى العرض 😔";
-    }
-  }, 1000);
-</script>
-<script>
-  function toggleMenu() {
-    document.getElementById("menu").classList.toggle("active");
-  }
-</script>
-</body>
-</html>
